@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ddd;
+  padding: 16px 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+
+  .coin-image {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+  }
+}
