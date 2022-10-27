@@ -1,7 +1,8 @@
 import React from 'react';
+import { CoinType } from '../App';
 import './Card.scss';
 
-const Card = props => {
+const Card = (props: Pick<CoinType, 'name' | 'rank' | 'symbol'>) => {
   const { name, rank, symbol } = props;
   return (
     <li className="card">

@@ -4,8 +4,18 @@ import './App.scss';
 
 const FETCH_URL = `https://api.coinpaprika.com/v1/coins`;
 
+export interface CoinType {
+  id: string;
+  name: string;
+  symbol: string;
+  rank: number;
+  is_new: boolean;
+  is_active: boolean;
+  type: string;
+}
+
 const App = () => {
-  const [coins, setCoins] = useState([]);
+  const [coins, setCoins] = useState<CoinType[]>([]);
 
   useEffect(() => {
     (async () => {
@@ -16,11 +26,17 @@ const App = () => {
   }, []);
 
   console.log(coins);
+
   return (
     <div className="App">
       <ul>
         {coins.map(coin => (
-          <Card key={coin.id} {...coin} />
+          <Card
+            key={coin.id}
+            name={coin.name}
+            rank={coin.rank}
+            symbol={coin.symbol}
+          />
         ))}
       </ul>
     </div>
